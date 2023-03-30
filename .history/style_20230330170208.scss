@@ -1,0 +1,21 @@
+$layout-width-inner: 1200px;
+
+$breakpoints: (
+  //キー : 値
+  "sm": "(min-width: 480px)",
+  "md": "(min-width: 600px)",
+  "lg": "(min-width: 960px)",
+  "pc": "(min-width: #{$layout-width-inner})",
+);
+
+//メディアクエリー
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+body  {
+font-family: 'Kameron','Noto Sans JP', sans-serif;
+background: #080;
+}
